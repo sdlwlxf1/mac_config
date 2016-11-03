@@ -63,10 +63,10 @@ string frequencySort(string s) {
     return s;
 }
 
-int main(int argc, const char * argv[]) {
-    string teststr = "Mymommaalwayssaid,\"Lifewaslikeaboxofchocolates.Youneverknowwhatyou'regonnaget.";
-    std::cout << teststr << endl;
-    teststr = frequencySort(teststr);
-    std::cout << teststr;
-    return 0;
-}
+//int main(int argc, const char * argv[]) {
+//    string teststr = "Mymommaalwayssaid,\"Lifewaslikeaboxofchocolates.Youneverknowwhatyou'regonnaget.";
+//    std::cout << teststr << endl;
+//    teststr = frequencySort(teststr);
+//    std::cout << teststr;
+//    return 0;
+//}
