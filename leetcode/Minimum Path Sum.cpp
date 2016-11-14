@@ -18,8 +18,8 @@ int minPathSum(vector<vector<int>>& grid) {
     return tgrid[tgrid.size()-1][tgrid[0].size()-1];
 }
 
-int main(int argc, const char * argv[]) {
-    vector<vector<int>> grid = {{1,4,2,5,1},{1,4,2,5,1},{1,4,2,5,1},{1,4,2,5,1},{1,4,2,5,1}};
-    int res = minPathSum(grid);
-    return 0;
-}
+//int main(int argc, const char * argv[]) {
+//    vector<vector<int>> grid = {{1,4,2,5,1},{1,4,2,5,1},{1,4,2,5,1},{1,4,2,5,1},{1,4,2,5,1}};
+//    int res = minPathSum(grid);
+//    return 0;
+//}
