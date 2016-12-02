@@ -37,14 +37,14 @@ int maximalRectangle(vector<vector<char>> &matrix) {
     return maxArea;
 }
 
-int main() {
-    vector<vector<char>> matrix = 
-    {
-        {'1', '0', '1', '0', '0'},
-        {'1', '0', '1', '1', '1'},
-        {'1', '1', '1', '1', '1'},
-        {'1', '0', '0', '1', '0'},
-    };
-    int ret = maximalRectangle(matrix);
-    return 0;
-}
+//int main() {
+//    vector<vector<char>> matrix = 
+//    {
+//        {'1', '0', '1', '0', '0'},
+//        {'1', '0', '1', '1', '1'},
+//        {'1', '1', '1', '1', '1'},
+//        {'1', '0', '0', '1', '0'},
+//    };
+//    int ret = maximalRectangle(matrix);
+//    return 0;
+//}
