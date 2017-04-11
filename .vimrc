@@ -1,17 +1,62 @@
 execute pathogen#infect()
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
 syntax on
 filetype plugin indent on
 
 "config begin  
 "impressive : http://amix.dk/vim/vimrc.html  
-  
+
 "==========================================  
 "General  
 "==========================================  
-  
+
 " history存储长度。  
 set history=1000         
-  
+
 "检测文件类型  
 filetype on  
 " 针对不同的文件类型采用不同的缩进格式    
@@ -20,33 +65,33 @@ filetype indent on
 filetype plugin on  
 "启动自动补全  
 filetype plugin indent on  
-  
+
 " 非兼容vi模式。去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限  
 set nocompatible        
 set autoread          " 文件修改之后自动载入。  
 set shortmess=atI       " 启动的时候不显示那个援助索马里儿童的提示  
-  
+
 " 取消备份。  
 " Turn backup off, since most stuff is in SVN, git et.c anyway...  
 set nobackup  
 set nowb  
 set noswapfile  
-  
+
 "粘贴时保持格式  
 set paste  
 "- 则点击光标不会换,用于复制  
 set mouse-=a           " 在所有的模式下面打开鼠标。  
 set selection=exclusive    
 set selectmode=mouse,key  
-  
+
 " No annoying sound on errors  
 " 去掉输入错误的提示声音  
 set noerrorbells  
 set novisualbell  
 set t_vb=  
 set tm=500  
-  
-  
+
+
 "==========================================  
 " show and format  
 "==========================================  
@@ -55,13 +100,13 @@ set number
 set nowrap                    " 取消换行。  
 ""为方便复制，用<F2>开启/关闭行号显示:  
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>  
-  
-  
+
+
 "括号配对情况  
 set showmatch  
 " How many tenths of a second to blink when matching brackets  
 set mat=2  
-  
+
 "设置文内智能搜索提示  
 " 高亮search命中的文本。  
 set hlsearch            
@@ -71,7 +116,7 @@ set ignorecase
 set incsearch  
 " 有一个或以上大写字母时仍大小写敏感  
 set smartcase  
-  
+
 " 代码折叠  
 "set foldenable
 " 折叠方法  
@@ -84,16 +129,16 @@ set smartcase
 " set foldmethod=syntax
 " 在左侧显示折叠的层次  
 "set foldcolumn=4  
-  
+
 set tabstop=4                " 设置Tab键的宽度        [等同的空格个数]  
 set shiftwidth=4  
 set expandtab                " 将Tab自动转化成空格    [需要输入真正的Tab键时，使用 Ctrl+V + Tab]  
 " 按退格键时可以一次删掉 4 个空格  
 set softtabstop=4  
-  
+
 set ai "Auto indent  
 set si "Smart indent  
-  
+
 "==========================================  
 " status  
 "==========================================  
@@ -101,12 +146,12 @@ set si "Smart indent
 set ruler  
 ""在状态栏显示正在输入的命令  
 set showcmd  
-  
+
 " Set 7 lines to the cursor - when moving vertically using j/k 上下滚动,始终在中间  
 set so=7  
-  
+
 "set cursorline              " 突出显示当前行  
-  
+
 " 命令行（在状态行下）的高度，默认为1，这里是2  
 "set cmdheight=2  
 "set rulerformat=%20(%2*%<%f%=\ %m%r\ %3l\ %c\ %p%%%)  
@@ -114,25 +159,25 @@ set so=7
 set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P  
 " Always show the status line  
 "set laststatus=2  
-  
-  
+
+
 "==========================================  
 "colors and fonts  
 "==========================================  
 "开启语法高亮  
 syntax enable  
 syntax on  
-  
+
 "配色方案 三种,选一个  
 "colorscheme darkblue          " 深蓝色配色方案。  
-  
+
 colorscheme desert " 经典配色方案。  
 set background=dark  
-  
+
 "同sublime text2  
 "colorscheme molokai  
 set t_Co=256  
-  
+
 " Set extra options when running in GUI mode  
 if has("gui_running")  
     set guioptions-=T  
@@ -141,7 +186,7 @@ if has("gui_running")
     set guitablabel=%M\ %t  
 endif  
 set guifont=Monaco:h16          " 字体 && 字号    
-  
+
 "==========================================  
 " file encode  
 "==========================================  
@@ -151,53 +196,52 @@ set guifont=Monaco:h16          " 字体 && 字号
 " 自动判断编码时，依次尝试以下编码：  
 set fileencodings=ucs-bom,utf-8,gb18030,default  
 " gb18030 最好在 UTF-8 前面，否则其它编码的文件极可能被误识为 UTF-8  
-  
+
 " Use Unix as the standard file type  
 set ffs=unix,dos,mac  
-  
+
 " 如遇Unicode值大于255的文本，不必等到空格再折行。  
 set formatoptions+=m
 " 合并两行中文时，不在中间加空格：  
 set formatoptions+=B  
-  
-  
+
+
 "==========================================  
 "others  
 "==========================================  
-  
+
 autocmd! bufwritepost _vimrc source % " vimrc文件修改之后自动加载。 windows。  
 autocmd! bufwritepost .vimrc source % " vimrc文件修改之后自动加载。 linux。  
-  
-  
+
 " 自动完成   
 set completeopt=longest,menu  
 " 增强模式中的命令行自动完成操作  
 set wildmenu  
 " Ignore compiled files  
 set wildignore=*.o,*~,*.pyc  
-  
+
 " Python 文件的一般设置，比如不要 tab 等  
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab  
 "自动补全配置  
 autocmd FileType python set omnifunc=pythoncomplete#Complete  
-  
-  
+
+
 " Return to last edit position when opening files (You want this!)  
 autocmd BufReadPost *  
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |  
-     \   exe "normal! g`\"" |  
-     \ endif  
-  
+            \ if line("'\"") > 0 && line("'\"") <= line("$") |  
+            \   exe "normal! g`\"" |  
+            \ endif  
+
 " A buffer becomes hidden when it is abandoned  
 "set hid  
-  
+
 " For regular expressions turn magic on  
 set magic  
-  
+
 " Configure backspace so it acts as it should act  
 set backspace=eol,start,indent  
 set whichwrap+=<,>,h,l  
-  
+
 "pydiction 1.2 python auto complete  
 let g:pydiction_location = '~/.vim/tools/pydiction/complete-dict'  
 "defalut g:pydiction_menu_height == 15  
@@ -211,3 +255,48 @@ set statusline+=%*
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 0
 "let g:syntastic_check_on_wq = 0
+
+
+" NERDTree
+let NERDTreeHighlightCursorline=1
+"let NERDTreeWinPos=1            "编辑区在右边"
+let NERDTreeWinSize=25
+"let NERDTreeShowHidden=1       "隐藏文件"
+let NERDTreeShowBookmarks=0     "是否显示书签"
+let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$', '^\.hg$' ]
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree |  endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+let g:NERDTree_title = "[NERDTree]"
+function! NERDTree_Start()
+    exe 'q' "执行一个退出命令，关闭自动出现的窗口"
+    exe 'NERDTree'
+endfunction
+
+function! NERDTree_IsValid()
+    return 1
+endfunction
+
+noremap <f5> :NERDTreeFind<cr>
+
+" Tagbar
+Bundle 'majutsushi/tagbar'
+let g:tagbar_ctags_bin='ctags'            "ctags程序的路径
+let g:tagbar_width=40                    "窗口宽度的设置
+let g:tagbar_right=1
+let g:tagbar_autofocus=1
+"autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
+"autocmd VimEnter * nested :call tagbar#autoopen()
+nmap <F4> :TagbarToggle<CR>
+
+let g:Tagbar_title = "[Tagbar]"
+function! Tagbar_Start()
+    exe 'q' "执行一个退出命令，关闭自动出现的窗口"
+    exe 'TagbarOpen'
+endfunction
+
+function! Tagbar_IsValid()
+    return 1
+endfunction
