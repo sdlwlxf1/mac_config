@@ -29,6 +29,11 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'axiaoxin/vim-json-line-format'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -282,7 +287,6 @@ endfunction
 noremap <f5> :NERDTreeFind<cr>
 
 " Tagbar
-Bundle 'majutsushi/tagbar'
 let g:tagbar_ctags_bin='ctags'            "ctags程序的路径
 let g:tagbar_width=40                    "窗口宽度的设置
 let g:tagbar_right=1
