@@ -1,0 +1,8 @@
+[user]
+	eamil = sdlwlxf@163.com
+	name = lixuefeng
+	email = sdlwlxf@163.com
+[push]
+	default = simple
+[core]
+	excludesfile = ~/OSX.gitignore
