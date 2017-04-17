@@ -34,6 +34,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'axiaoxin/vim-json-line-format'
 Plugin 'marijnh/tern_for_vim'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -305,3 +307,5 @@ endfunction
 function! Tagbar_IsValid()
     return 1
 endfunction
+
+let g:vim_markdown_folding_disabled = 1
