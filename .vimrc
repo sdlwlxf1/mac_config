@@ -1,5 +1,6 @@
 execute pathogen#infect()
 
+set shell=bash\ -i
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -36,6 +37,7 @@ Plugin 'axiaoxin/vim-json-line-format'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'suan/vim-instant-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
